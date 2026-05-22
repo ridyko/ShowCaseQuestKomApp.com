@@ -46,7 +46,7 @@
 <div class="orb orb-2"></div>
 
 {{-- NAVBAR --}}
-<nav class="fixed top-0 left-0 right-0 z-50 h-16 bg-[#0f1117]/80 backdrop-blur-xl border-b border-white/5">
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 h-16 bg-[#0f1117]/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
         <a href="{{ route('home') }}" class="flex items-center gap-2.5">
             <div class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-sm shadow-lg shadow-brand/30">

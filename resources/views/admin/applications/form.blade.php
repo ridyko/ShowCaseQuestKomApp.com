@@ -203,12 +203,9 @@
                             @foreach($application->screenshots as $ss)
                             <div class="relative group">
                                 <img src="{{ $ss->image_url }}" class="w-full h-16 object-cover rounded-lg" alt="">
-                                <form action="{{ route('admin.screenshots.destroy', $ss->id) }}" method="POST">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" class="absolute top-1 right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition">
-                                        <i class="fas fa-times" style="font-size:.5rem;"></i>
-                                    </button>
-                                </form>
+                                <button type="button" onclick="deleteScreenshot(event, '{{ route('admin.screenshots.destroy', $ss->id) }}')" class="absolute top-1 right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition">
+                                    <i class="fas fa-times" style="font-size:.5rem;"></i>
+                                </button>
                             </div>
                             @endforeach
                         </div>
@@ -221,6 +218,11 @@
             </div>
         </div>
     </div>
+</form>
+
+<form id="deleteScreenshotForm" method="POST" style="display: none;">
+    @csrf
+    @method('DELETE')
 </form>
 @endsection
 
@@ -238,5 +240,14 @@ document.getElementById('slug')?.addEventListener('input', function() {
     this.dataset.manual = 'true';
     document.getElementById('slugPreview').textContent = this.value || 'slug';
 });
+
+function deleteScreenshot(event, actionUrl) {
+    event.preventDefault();
+    if (confirm('Apakah Anda yakin ingin menghapus screenshot ini?')) {
+        const form = document.getElementById('deleteScreenshotForm');
+        form.action = actionUrl;
+        form.submit();
+    }
+}
 </script>
 @endpush

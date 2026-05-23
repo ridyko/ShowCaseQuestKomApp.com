@@ -47,28 +47,26 @@
 <body class="font-sans text-stone-900 bg-[#FDF6E2] min-h-screen dot-pattern antialiased">
 
 {{-- NAVBAR --}}
-<nav id="mainNav" class="fixed top-4 left-0 right-0 z-50 h-16 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full">
-        <div class="w-full h-full bg-[#FFFFFF] border-2 border-stone-900 rounded-2xl px-6 flex items-center justify-between shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
-            <a href="{{ route('home') }}" class="flex items-center gap-2.5 group">
-                <div class="w-8 h-8 bg-[#FDE047] border-2 border-stone-900 rounded-xl flex items-center justify-center text-stone-900 text-xs font-black shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] transition-transform group-hover:scale-105">
-                    <i class="fas fa-cube"></i>
-                </div>
-                <span class="font-display font-black text-base tracking-tight text-stone-900 uppercase">Showcase<span class="text-stone-500 font-bold">.studio</span></span>
-            </a>
-            <div class="flex items-center gap-1 sm:gap-2">
-                <a href="{{ route('home') }}" class="hidden sm:block text-stone-900 hover:bg-stone-100 text-xs font-black px-3.5 py-2 rounded-xl border border-transparent hover:border-stone-900 transition">Beranda</a>
-                <a href="#gallery" class="hidden sm:block text-stone-900 hover:bg-stone-100 text-xs font-black px-3.5 py-2 rounded-xl border border-transparent hover:border-stone-900 transition">Galeri</a>
-                @auth
-                    <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2 bg-[#86EFAC] border-2 border-stone-900 hover:bg-[#4ADE80] text-stone-900 text-xs font-black px-4 py-2.5 rounded-xl transition shadow-[3px_3px_0px_0px_rgba(28,25,23,1)]">
-                        <i class="fas fa-tachometer-alt text-[10px]"></i> Dashboard
-                    </a>
-                @else
-                    <a href="{{ route('login') }}" class="flex items-center gap-2 bg-[#FDE047] border-2 border-stone-900 hover:bg-[#FACC15] text-stone-900 text-xs font-black px-4 py-2.5 rounded-xl transition shadow-[3px_3px_0px_0px_rgba(28,25,23,1)]">
-                        <i class="fas fa-sign-in-alt text-[10px]"></i> Masuk
-                    </a>
-                @endauth
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-stone-900 h-16 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+        <a href="{{ route('home') }}" class="flex items-center gap-2.5 group">
+            <div class="w-8 h-8 bg-[#FDE047] border-2 border-stone-900 rounded-xl flex items-center justify-center text-stone-900 text-xs font-black shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] transition-transform group-hover:scale-105">
+                <i class="fas fa-cube"></i>
             </div>
+            <span class="font-display font-black text-base tracking-tight text-stone-900 uppercase">Showcase<span class="text-stone-500 font-bold">.studio</span></span>
+        </a>
+        <div class="flex items-center gap-1 sm:gap-2">
+            <a href="{{ route('home') }}" class="hidden sm:block text-stone-900 hover:bg-stone-100 text-xs font-black px-3.5 py-2 rounded-xl border border-transparent hover:border-stone-900 transition">Beranda</a>
+            <a href="#gallery" class="hidden sm:block text-stone-900 hover:bg-stone-100 text-xs font-black px-3.5 py-2 rounded-xl border border-transparent hover:border-stone-900 transition">Galeri</a>
+            @auth
+                <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2 bg-[#86EFAC] border-2 border-stone-900 hover:bg-[#4ADE80] text-stone-900 text-xs font-black px-4 py-2.5 rounded-xl transition shadow-[3px_3px_0px_0px_rgba(28,25,23,1)]">
+                    <i class="fas fa-tachometer-alt text-[10px]"></i> Dashboard
+                </a>
+            @else
+                <a href="{{ route('login') }}" class="flex items-center gap-2 bg-[#FDE047] border-2 border-stone-900 hover:bg-[#FACC15] text-stone-900 text-xs font-black px-4 py-2.5 rounded-xl transition shadow-[3px_3px_0px_0px_rgba(28,25,23,1)]">
+                    <i class="fas fa-sign-in-alt text-[10px]"></i> Masuk
+                </a>
+            @endauth
         </div>
     </div>
 </nav>
